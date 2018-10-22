@@ -55,7 +55,7 @@ public class EchoClient
 				Log.e("EchoClient", "发往服务端的信息没有成功发出！！！");
 			
 			// 3000秒后进入下一次循环
-			Thread.sleep(3000);
+			Thread.sleep(30000);
 		}
 	}
 
