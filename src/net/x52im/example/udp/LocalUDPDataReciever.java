@@ -56,7 +56,8 @@ public class LocalUDPDataReciever
 	{
 		while (true)
 		{
-			byte[] data = new byte[1024];
+			//byte[] data = new byte[1024];
+			byte[] data = new byte[13];
 			// 接收数据报的包
 			DatagramPacket packet = new DatagramPacket(data, data.length);
 
@@ -68,8 +69,17 @@ public class LocalUDPDataReciever
 			localUDPSocket.receive(packet);
 			
 			// 解析服务端发过来的数据
-			String pFromServer = new String(packet.getData(), 0 , packet.getLength(), "UTF-8");
+//			String pFromServer = new String(packet.getData(), 0 , packet.getLength(), "UTF-8");
+//			Log.w(LocalUDPDataReciever.TAG, "【NOTE】>>>>>> 收到服务端的消息："+pFromServer);
+			
+			byte[] pFromServer = packet.getData();
 			Log.w(LocalUDPDataReciever.TAG, "【NOTE】>>>>>> 收到服务端的消息："+pFromServer);
+			
+			for(int i=0;i<pFromServer.length;i++)
+			{
+				System.out.print(pFromServer[i] + "    ,");
+			}
+			
 		}
 	}
 }

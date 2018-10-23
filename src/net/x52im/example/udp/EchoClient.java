@@ -31,7 +31,7 @@ public class EchoClient
 			byte[] soServerBytes = new byte[11];
 			soServerBytes[0]=(byte) 0xff;
 			soServerBytes[1]=0x00;
-			soServerBytes[2]=0x0b;
+			soServerBytes[2]=0x01;
 			//soServerBytes[3]=(byte) 0x95;
 			soServerBytes[3]=0x01;
 			soServerBytes[4]=0x05;
