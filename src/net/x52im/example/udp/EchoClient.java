@@ -31,7 +31,7 @@ public class EchoClient
 			byte[] soServerBytes = new byte[11];
 			soServerBytes[0]=(byte) 0xff;
 			soServerBytes[1]=0x00;
-			soServerBytes[2]=0x01;
+			soServerBytes[2]=0x0b;
 			//soServerBytes[3]=(byte) 0x95;
 			soServerBytes[3]=0x01;
 			soServerBytes[4]=0x05;
@@ -48,7 +48,7 @@ public class EchoClient
 					(byte)0x9a,0x00,0x00,0x1e,(byte) 0xff};
 			
 			// 开始发送
-			boolean ok = UDPUtils.send(soServerBytes2, soServerBytes2.length);
+			boolean ok = UDPUtils.send(soServerBytes, soServerBytes.length);
 			if(ok)
 				Log.d("EchoClient", "发往服务端的信息已送出.");
 			else
